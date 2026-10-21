@@ -1,0 +1,1024 @@
+{
+  "kind": "SYNTHETIC_OPAQUE_CONTRACT_FIXTURES",
+  "cases": [
+    {
+      "id": "lost-ack-same-key",
+      "variants": [
+        {
+          "id": "lost-ack-same-key:timeout",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "SAME_OPERATION_REPLAY",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "persisted-response-replay",
+      "variants": [
+        {
+          "id": "persisted-response-replay:create",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 200,
+            "connectionError": "ETIMEDOUT",
+            "headers": {
+              "idempotent-replayed": "true"
+            },
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "USE_ORIGINAL_RESULT",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "restart-durable-key",
+      "variants": [
+        {
+          "id": "restart-durable-key:durable",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "SAME_OPERATION_REPLAY",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "restart-durable-key:missing",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": null,
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": false,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "HUMAN_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "concurrent-key",
+      "variants": [
+        {
+          "id": "concurrent-key:in-progress",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 409,
+            "connectionError": null,
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "SAME_OPERATION_REPLAY",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "parameter-mismatch",
+      "variants": [
+        {
+          "id": "parameter-mismatch:amount",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": false,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "STOP_MISMATCH",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "parameter-mismatch:endpoint",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": false,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "STOP_MISMATCH",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "retention-expired",
+      "variants": [
+        {
+          "id": "retention-expired:24h",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 24
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "RECONCILE_OR_ESCALATE",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "retention-expired:25h",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 25
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "RECONCILE_OR_ESCALATE",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "cached-500",
+      "variants": [
+        {
+          "id": "cached-500:cached",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 500,
+            "connectionError": "ETIMEDOUT",
+            "headers": {
+              "idempotent-replayed": "true"
+            },
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": true,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "RECONCILE_OR_ESCALATE",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "retry-header",
+      "variants": [
+        {
+          "id": "retry-header:false",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 503,
+            "connectionError": "ETIMEDOUT",
+            "headers": {
+              "stripe-should-retry": "false"
+            },
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "RECONCILE_OR_ESCALATE",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "retry-header:true",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 503,
+            "connectionError": "ETIMEDOUT",
+            "headers": {
+              "stripe-should-retry": "true"
+            },
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "SAME_OPERATION_REPLAY",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "retry-header:exhausted",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": 503,
+            "connectionError": "ETIMEDOUT",
+            "headers": {
+              "stripe-should-retry": "true"
+            },
+            "retriesUsed": 2,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "RECONCILE_OR_ESCALATE",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "known-intent-status",
+      "variants": [
+        {
+          "id": "known-intent-status:processing",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": true,
+              "matched": true,
+              "status": "processing"
+            },
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "OBSERVE_ORIGINAL_INTENT",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "known-intent-status:requires_action",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": true,
+              "matched": true,
+              "status": "requires_action"
+            },
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "OBSERVE_ORIGINAL_INTENT",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "duplicate-unordered-events",
+      "variants": [
+        {
+          "id": "duplicate-unordered-events:verified-current",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": true,
+              "matched": true,
+              "status": "succeeded"
+            },
+            "fulfillment": {
+              "complete": true
+            },
+            "events": [
+              {
+                "id": "event-b",
+                "signatureVerified": true,
+                "status": "succeeded"
+              },
+              {
+                "id": "event-a",
+                "signatureVerified": true,
+                "status": "processing"
+              },
+              {
+                "id": "event-b",
+                "signatureVerified": true,
+                "status": "succeeded"
+              }
+            ],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "USE_ORIGINAL_RESULT",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "duplicate-unordered-events:unverified-no-read",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [
+              {
+                "id": "event-x",
+                "signatureVerified": false,
+                "status": "succeeded"
+              }
+            ],
+            "cachedError": false,
+            "lookupUnavailable": true,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "HUMAN_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "no-observation",
+      "variants": [
+        {
+          "id": "no-observation:unavailable",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": null,
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": true,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "HUMAN_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "no-observation:stale",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": false,
+              "matched": true,
+              "status": "succeeded"
+            },
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": true,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "HUMAN_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "app-provider-inconsistent",
+      "variants": [
+        {
+          "id": "app-provider-inconsistent:ledger-gap",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": true,
+              "matched": true,
+              "status": "succeeded"
+            },
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": false,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "APPLICATION_REPAIR_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        },
+        {
+          "id": "app-provider-inconsistent:wrong-object",
+          "evidence": {
+            "operation": {
+              "id": "opaque-operation",
+              "key": "opaque-key",
+              "fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "persistedBeforeDispatch": true,
+              "parametersEqual": true,
+              "endpointEqual": true,
+              "scopeEqual": true,
+              "ageHours": 1
+            },
+            "httpStatus": null,
+            "connectionError": "ETIMEDOUT",
+            "headers": {},
+            "retriesUsed": 0,
+            "intent": {
+              "fresh": true,
+              "matched": false,
+              "status": "succeeded"
+            },
+            "fulfillment": {
+              "complete": false
+            },
+            "events": [],
+            "cachedError": false,
+            "lookupUnavailable": true,
+            "sources": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "observedAt": "2026-10-20T18:50:00.000Z"
+          },
+          "oracle": {
+            "action": "HUMAN_REVIEW",
+            "absenceProved": false,
+            "settled": false,
+            "automaticMutation": false
+          }
+        }
+      ]
+    }
+  ]
+}

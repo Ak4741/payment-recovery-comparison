@@ -1,0 +1,2312 @@
+{
+  "kind": "SYNTHETIC_OFFLINE_OBSERVED_RESULTS",
+  "started_at": "2026-10-20T18:51:31.442Z",
+  "completed_at": "2026-10-20T18:51:31.957Z",
+  "source_fixture_sha256": "c0de980fca4c0d4073f663c4837598b15e2df3c4e632fe03bd096e3185b0e8fc",
+  "case_families": 12,
+  "variants": 21,
+  "equivalent_decisions": 21,
+  "additional_correct_decisions": 0,
+  "unique_useful_diagnostic_information": 0,
+  "unsafe_duplicate_recommendations": 0,
+  "false_ready_decisions": 0,
+  "provider_calls": 0,
+  "customer_cases": 0,
+  "rows": [
+    {
+      "case_id": "lost-ack-same-key",
+      "variant_id": "lost-ack-same-key:timeout",
+      "input_hash": "ae3e6831fb49dc451e05916deee0901ad1a7dcf9c4683db7e71fbed847a9adfd",
+      "outputs": {
+        "baseline": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": true,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "persisted-response-replay",
+      "variant_id": "persisted-response-replay:create",
+      "input_hash": "6d3794ddebe4072126b3b937c1ca8fb54d561e1e45c1e36eb334518e92abc222",
+      "outputs": {
+        "mechanism": {
+          "action": "USE_ORIGINAL_RESULT",
+          "reason": "Original endpoint result replayed; payment status remains separate",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "APPLIED",
+            "reason": "Original endpoint result replayed; payment status remains separate",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "USE_ORIGINAL_RESULT",
+          "reason": "Original endpoint result replayed; payment status remains separate",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "restart-durable-key",
+      "variant_id": "restart-durable-key:durable",
+      "input_hash": "ae3e6831fb49dc451e05916deee0901ad1a7dcf9c4683db7e71fbed847a9adfd",
+      "outputs": {
+        "baseline": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": true,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "restart-durable-key",
+      "variant_id": "restart-durable-key:missing",
+      "input_hash": "448453500a8c610a33a4ea2d24525c2c89a4e51871fdd7562e4f05b5215a2996",
+      "outputs": {
+        "baseline": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Durable operation mapping unavailable",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Durable operation mapping unavailable",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Durable operation mapping unavailable",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "concurrent-key",
+      "variant_id": "concurrent-key:in-progress",
+      "input_hash": "ae7c4b9634cd892cbac5153d815c98278c1dd42079cc9ae75c5d81fe03a16607",
+      "outputs": {
+        "mechanism": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": true,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "parameter-mismatch",
+      "variant_id": "parameter-mismatch:amount",
+      "input_hash": "d97fb0cb2c65c85a669d77b5d811fba456c2963fe70cbaca60257639121febf6",
+      "outputs": {
+        "baseline": {
+          "action": "STOP_MISMATCH",
+          "reason": "Persisted operation identity or parameters differ",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "STOP_MISMATCH",
+          "reason": "Persisted operation identity or parameters differ",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Persisted operation identity or parameters differ",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "parameter-mismatch",
+      "variant_id": "parameter-mismatch:endpoint",
+      "input_hash": "7b66ab583f5b92ab7229339c34e1184705d63bc3a0630b90dc1d94c1c500a15c",
+      "outputs": {
+        "baseline": {
+          "action": "STOP_MISMATCH",
+          "reason": "Persisted operation identity or parameters differ",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "STOP_MISMATCH",
+          "reason": "Persisted operation identity or parameters differ",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Persisted operation identity or parameters differ",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "retention-expired",
+      "variant_id": "retention-expired:24h",
+      "input_hash": "ae9cb253b168ef5d45613b3a6c8272948513ae06747742cf8d45054a2cbffdcf",
+      "outputs": {
+        "mechanism": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Unresolved operation outside 24-hour replay window",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 24,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Unresolved operation outside 24-hour replay window",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Unresolved operation outside 24-hour replay window",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 24,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "retention-expired",
+      "variant_id": "retention-expired:25h",
+      "input_hash": "2f1e093c315bd07e6252ec1a925e1ea2ea44bc8535132410526c3d82f6601a9a",
+      "outputs": {
+        "mechanism": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Unresolved operation outside 24-hour replay window",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 25,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Unresolved operation outside 24-hour replay window",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Unresolved operation outside 24-hour replay window",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 25,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "cached-500",
+      "variant_id": "cached-500:cached",
+      "input_hash": "411139ed4068aa0aecff246251938f316e860a3f81b2010ccf52f3dce4418b5a",
+      "outputs": {
+        "baseline": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Cached 500 remains indeterminate; replay cannot establish absence",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Cached 500 remains indeterminate; replay cannot establish absence",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Cached 500 remains indeterminate; replay cannot establish absence",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "retry-header",
+      "variant_id": "retry-header:false",
+      "input_hash": "8c75b6c2ebaafeaeccb440f8e75092579a8ee09300cda366084e01229418b861",
+      "outputs": {
+        "mechanism": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Native retry refused or budget exhausted",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry refused or budget exhausted",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Native retry refused or budget exhausted",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "retry-header",
+      "variant_id": "retry-header:true",
+      "input_hash": "0b0f69e7b3f3d572e7836d31eeecf805bc7266ae4be9c985d9aabc59fc1762e6",
+      "outputs": {
+        "mechanism": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": true,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "SAME_OPERATION_REPLAY",
+          "reason": "Native retry guidance within bounded budget, durable same operation and retention",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": true,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "retry-header",
+      "variant_id": "retry-header:exhausted",
+      "input_hash": "a7e6b8b5d271a6b8e24165474f708937fe812d725bd6a688575b06785a84999e",
+      "outputs": {
+        "mechanism": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Native retry refused or budget exhausted",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Native retry refused or budget exhausted",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "RECONCILE_OR_ESCALATE",
+          "reason": "Native retry refused or budget exhausted",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "known-intent-status",
+      "variant_id": "known-intent-status:processing",
+      "input_hash": "741d9d4f43ffe776cebd241ef40ec2ea00f4f7d841360281b08be28a604765a2",
+      "outputs": {
+        "baseline": {
+          "action": "OBSERVE_ORIGINAL_INTENT",
+          "reason": "Original PaymentIntent requires ongoing state handling",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "processing",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "OBSERVE_ORIGINAL_INTENT",
+          "reason": "Original PaymentIntent requires ongoing state handling",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "processing",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Original PaymentIntent requires ongoing state handling",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "known-intent-status",
+      "variant_id": "known-intent-status:requires_action",
+      "input_hash": "a94d691e420fbe03b87e1085fa0e9f0010ccb91350e1db282217340dbc93b87b",
+      "outputs": {
+        "baseline": {
+          "action": "OBSERVE_ORIGINAL_INTENT",
+          "reason": "Original PaymentIntent requires ongoing state handling",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "requires_action",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "OBSERVE_ORIGINAL_INTENT",
+          "reason": "Original PaymentIntent requires ongoing state handling",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "requires_action",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Original PaymentIntent requires ongoing state handling",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "duplicate-unordered-events",
+      "variant_id": "duplicate-unordered-events:verified-current",
+      "input_hash": "88ee42938a59b8548c09ae1a5748b95597ae176db93a92ad1d8f5ac595893bef",
+      "outputs": {
+        "mechanism": {
+          "action": "USE_ORIGINAL_RESULT",
+          "reason": "Authoritative original PaymentIntent succeeded; fulfillment recorded",
+          "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [
+              "event-b",
+              "event-a"
+            ],
+            "verifiedEventCount": 3,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "APPLIED",
+            "reason": "Authoritative original PaymentIntent succeeded; fulfillment recorded",
+            "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "USE_ORIGINAL_RESULT",
+          "reason": "Authoritative original PaymentIntent succeeded; fulfillment recorded",
+          "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [
+              "event-b",
+              "event-a"
+            ],
+            "verifiedEventCount": 3,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "duplicate-unordered-events",
+      "variant_id": "duplicate-unordered-events:unverified-no-read",
+      "input_hash": "34654592a9103b6cc8aa6405076ae1838996be92c8344117cca77c2adff065b0",
+      "outputs": {
+        "mechanism": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Missing events or unavailable lookup do not prove nonapplication",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "no-observation",
+      "variant_id": "no-observation:unavailable",
+      "input_hash": "8314a8004ef7e7f02f3f08e1e07ef711c4bf8d4956e6a0e8ecc7d3b67754aba0",
+      "outputs": {
+        "baseline": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "UNKNOWN",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Missing events or unavailable lookup do not prove nonapplication",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "no-observation",
+      "variant_id": "no-observation:stale",
+      "input_hash": "b7f9de4a4f71c97ddaffc6e83fa60b32b0f2b4b3ddc77efc22affa73e8b5517a",
+      "outputs": {
+        "baseline": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        },
+        "mechanism": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Missing events or unavailable lookup do not prove nonapplication",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        }
+      }
+    },
+    {
+      "case_id": "app-provider-inconsistent",
+      "variant_id": "app-provider-inconsistent:ledger-gap",
+      "input_hash": "519ef1a4ad1cbc2177224c6d10a7f92bfab1dd0300a2efba64d7731f49fb156f",
+      "outputs": {
+        "mechanism": {
+          "action": "APPLICATION_REPAIR_REVIEW",
+          "reason": "Provider succeeded; application fulfillment incomplete",
+          "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": true
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "PARTIAL_REPAIR",
+            "reason": "Provider succeeded; application fulfillment incomplete",
+            "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "APPLICATION_REPAIR_REVIEW",
+          "reason": "Provider succeeded; application fulfillment incomplete",
+          "boundary": "Original PaymentIntent current provider status and application ledger; no new payment",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": true
+          },
+          "automaticMutation": false
+        }
+      }
+    },
+    {
+      "case_id": "app-provider-inconsistent",
+      "variant_id": "app-provider-inconsistent:wrong-object",
+      "input_hash": "9aefebee423bf2d14684ab20f6e110a2f6239d279729f458257cb6c73729becc",
+      "outputs": {
+        "mechanism": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false,
+          "receipt": {
+            "schemaVersion": 1,
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "provider": "stripe-v1",
+            "outcome": "AMBIGUOUS_HUMAN_REVIEW",
+            "reason": "Missing events or unavailable lookup do not prove nonapplication",
+            "boundary": "Provider request processing only; settlement and fulfillment unproved",
+            "observedAt": "2026-10-20T18:50:00.000Z",
+            "retry": {
+              "allowed": false,
+              "requirement": ""
+            },
+            "provenance": {
+              "ruleVersion": "reconstruction-v1",
+              "evidenceKind": "provider-and-application-evidence"
+            },
+            "providerReplayPermission": {
+              "allowed": false,
+              "sameKeyOnly": true,
+              "absenceProved": false
+            },
+            "sourceAge": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "kind": "PAYMENT_RECOVERY_RECEIPT_V1"
+          }
+        },
+        "baseline": {
+          "action": "HUMAN_REVIEW",
+          "reason": "Missing events or unavailable lookup do not prove nonapplication",
+          "boundary": "Provider request processing only; settlement and fulfillment unproved",
+          "absenceProved": false,
+          "settled": false,
+          "retry": {
+            "allowed": false,
+            "sameKeyOnly": true,
+            "maxNetworkRetries": 2,
+            "timeoutMs": 80000,
+            "backoff": "SDK exponential jitter; 0.5s initial, 5s cap"
+          },
+          "diagnostics": {
+            "operationId": "opaque-operation",
+            "requestFingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "evidence": [
+              {
+                "kind": "application-operation-ledger",
+                "ageSeconds": 0
+              },
+              {
+                "kind": "provider-response-or-transport",
+                "ageSeconds": 0
+              }
+            ],
+            "ageHours": 1,
+            "intentStatus": "succeeded",
+            "eventIds": [],
+            "verifiedEventCount": 0,
+            "providerApplicationMismatch": false
+          },
+          "automaticMutation": false
+        }
+      }
+    }
+  ]
+}

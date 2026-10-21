@@ -1,0 +1,12 @@
+{
+  "kind": "SYNTHETIC_OFFLINE_REPORT_ONLY",
+  "code_distribution": false,
+  "license": "No additional license granted; all rights retained",
+  "files": {
+    "DATA-INSPECTION.md": "4bf4da91857ecdeea82548a895f46e84c75e8ee51324e410202a708a06a01a6c",
+    "fixtures.json": "c0de980fca4c0d4073f663c4837598b15e2df3c4e632fe03bd096e3185b0e8fc",
+    "README.md": "5e5468e11beb6c5de1844fd6349860daadfd49431e188862660cf76dbdaeff72",
+    "REPORT.md": "cacf9c9d923efc1745b549a0cf39f426c6213689188fb81b6f4affa54b3f3729",
+    "results.json": "2eb1c438ec96222161b934e0a823316deea3e1abb6edf3daffc201685fcf3ebf"
+  }
+}
